@@ -111,7 +111,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.preview.ubwc=0 \
     vendor.video.disable.ubwc=1 \
-    vidc.enc.dcvs.extra-buff-count=2
+    vidc.enc.dcvs.extra-buff-count=2 \
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.HAL3.enabled=1
 
 # CNE
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

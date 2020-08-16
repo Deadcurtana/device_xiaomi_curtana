@@ -22,13 +22,20 @@
 # definition file).
 #
 
-COMMON_PATH := device/xiaomi/sm6250-common
+COMMON_PATH := device/xiaomi/curtana
 
 BOARD_VENDOR := xiaomi
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := curtana
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := atoll
 TARGET_NO_BOOTLOADER := true
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 
 # Platform
 TARGET_BOARD_PLATFORM := atoll
@@ -65,6 +72,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6250
+TARGET_KERNEL_CONFIG := curtana_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 
 # QCOM hardware
@@ -201,6 +209,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2020-07-01
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
@@ -235,4 +246,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
-include vendor/xiaomi/sm6250-common/BoardConfigVendor.mk
+include vendor/xiaomi/curtana/BoardConfigVendor.mk
