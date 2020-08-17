@@ -72,7 +72,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6250
-TARGET_KERNEL_CONFIG := curtana_defconfig
+TARGET_KERNEL_CONFIG := vendor/atoll-perf_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
 
 # QCOM hardware
